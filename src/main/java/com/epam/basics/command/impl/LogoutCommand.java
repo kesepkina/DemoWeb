@@ -14,7 +14,7 @@ public class LogoutCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request) {
-        String page = PagePath.LOGIN;
+        String page = PagePath.SIGNUP;
         request.getSession().invalidate();
         log.debug("Logged out");
         return page;

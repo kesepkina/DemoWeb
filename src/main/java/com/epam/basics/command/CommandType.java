@@ -1,16 +1,16 @@
 package com.epam.basics.command;
 
-import com.epam.basics.command.impl.BackToMainPageCommand;
-import com.epam.basics.command.impl.LoginCommand;
-import com.epam.basics.command.impl.LogoutCommand;
-import com.epam.basics.command.impl.ShowInfoCommand;
+import com.epam.basics.command.impl.*;
 import com.epam.basics.service.impl.UserServiceImpl;
 
 public enum CommandType {
-    LOGIN(new LoginCommand(new UserServiceImpl())),
+    SIGNUP(new SignUpCommand(new UserServiceImpl())),
+    LOGIN_PAGE(new PageCommand(PagePath.LOGIN)),
+    SIGNUP_PAGE(new PageCommand(PagePath.SIGNUP)),
+    LOGIN(new LogInCommand(new UserServiceImpl())),
     LOGOUT(new LogoutCommand()),
-    SHOWINFO(new ShowInfoCommand()),
-    BACKTOMAIN(new BackToMainPageCommand());
+    SHOW_INFO(new ShowInfoCommand()),
+    MAIN_PAGE(new PageCommand(PagePath.MAIN));
 
     private final Command command;
 

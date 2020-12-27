@@ -7,14 +7,18 @@ import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class BackToMainPageCommand implements Command {
+public class PageCommand implements Command {
 
     private static final Logger log = LogManager.getLogger();
+    private final String page;
+
+    public PageCommand(String page) {
+        this.page = page;
+    }
 
     @Override
     public String execute(HttpServletRequest request) {
-        String page = PagePath.MAIN;
-        log.debug("Back to the main page.");
+        log.debug("Forward to {}", page);
         return page;
     }
 }

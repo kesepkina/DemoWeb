@@ -20,9 +20,9 @@
         <input type="submit" value="log out">
     </form>
     <form name="infoForm" method="POST" action="controller">
-        <input type="hidden" name="command" value="showInfo"/>
+        <input type="hidden" name="command" value="show_Info"/>
         <br/>
-        <input type="submit" value="get info about project">
+        <input type="submit" value="info about project">
     </form>
 </body>
 </html>
