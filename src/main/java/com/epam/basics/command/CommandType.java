@@ -5,12 +5,12 @@ import com.epam.basics.service.impl.UserServiceImpl;
 
 public enum CommandType {
     SIGNUP(new SignUpCommand(new UserServiceImpl())),
-    LOGIN_PAGE(new PageCommand(PagePath.LOGIN)),
-    SIGNUP_PAGE(new PageCommand(PagePath.SIGNUP)),
     LOGIN(new LogInCommand(new UserServiceImpl())),
     LOGOUT(new LogoutCommand()),
     SHOW_INFO(new ShowInfoCommand()),
-    MAIN_PAGE(new PageCommand(PagePath.MAIN));
+    MAIN_PAGE(new PageCommand(PagePath.MAIN)),
+    LOGIN_PAGE(new PageCommand(PagePath.LOGIN)),
+    SIGNUP_PAGE(new PageCommand(PagePath.SIGNUP));
 
     private final Command command;
 

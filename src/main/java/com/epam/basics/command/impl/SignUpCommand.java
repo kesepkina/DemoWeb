@@ -5,6 +5,8 @@ import com.epam.basics.service.impl.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 
+import java.io.UnsupportedEncodingException;
+
 import static com.epam.basics.command.PagePath.*;
 
 public class SignUpCommand implements Command {
@@ -43,6 +45,11 @@ public class SignUpCommand implements Command {
             dataAreCorrect = false;
         }
         if (dataAreCorrect) {
+            try {
+                request.setCharacterEncoding("utf8");
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
             request.setAttribute(PARAM_NAME, service.getName(username));
             page = MAIN;
         } else {

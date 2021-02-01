@@ -5,7 +5,7 @@
   Time: 19:09
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <html>
 <head>
     <title>Log in</title>
@@ -14,15 +14,15 @@
 <form name="signupForm" method="POST" action="controller">
     <input type="hidden" name="command" value="login" />
     Your name<br/>
-    <input type="text" name="name" value="Виктор" required/>
+    <input type="text" name="name" value="" required/>
     <br/>e-mail<br/>
-    <input type="email" name="email" value="v@a.by" required/>
+    <input type="email" name="email" value="" required/>
     <br/>Username<br/>
-    <input type="text" name="username" value="viktor" required pattern="[a-zA-Z0-9._]{5,}"
-           title='must include only letters, ciphers, characters ".", "_" and have at least 5 characters' />
+    <input type="text" name="username" value="" required pattern="[a-zA-Z0-9._]{5,20}"
+           title='must include only letters, ciphers, characters ".", "_" and have from 5 to 20 characters' />
     ${errorUsernameMessage}
     <br/>Password<br/>
-    <input type="password" name="password" value="1234$asdfF" required pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&()])(?=\S+$).{8,20}$"
+    <input type="password" name="password" value="" required pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&()])(?=\S+$).{8,20}$"
            title='must include at least one letter in upper and in lower case, at least one cipher, at least one special character ("@", "#". "$", "%", "^", "&", "(" or ")", no spaces and have from 8 to 20 characters'/>
     ${errorPasswordMessage}
     <br/><br/>

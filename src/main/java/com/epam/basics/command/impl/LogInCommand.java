@@ -5,9 +5,6 @@ import com.epam.basics.service.impl.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
-
 import static com.epam.basics.command.PagePath.*;
 
 public class LogInCommand implements Command {
@@ -24,10 +21,9 @@ public class LogInCommand implements Command {
     }
 
     @Override
-    public String execute(HttpServletRequest request) throws UnsupportedEncodingException {
+    public String execute(HttpServletRequest request){
         String page;
         String nameValue = request.getParameter(PARAM_NAME);
-        System.out.println(nameValue);
         String emailValue = request.getParameter(PARAM_EMAIL);
         String usernameValue = request.getParameter(PARAM_USERNAME);
         String passValue = request.getParameter(PARAM_PASSWORD);
